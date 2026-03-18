@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecodeLabs | Frontend Project 3 — Interactive Web Elements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-mark">DL</span>
+                <span class="logo-name">DecodeLabs</span>
+            </div>
+
+            <button class="nav-toggle" popovertarget="mobile-nav" aria-label="Open navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <nav aria-label="Main navigation" class="nav-desktop">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#interactive">Interactive</a></li>
+                    <li><a href="#checklist">Checklist</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </nav>
+
+            <!-- Dark Mode Toggle — JS-powered (Project 3 requirement) -->
+            <button
+                class="theme-toggle js-theme-toggle"
+                aria-label="Toggle dark mode"
+                title="Toggle dark/light mode"
+            >
+                <span class="theme-icon" aria-hidden="true">🌙</span>
+            </button>
+
+            <div id="mobile-nav" popover class="nav-popover" aria-label="Mobile navigation">
+                <button class="nav-close" popovertarget="mobile-nav" popovertargetaction="hide" aria-label="Close navigation">✕</button>
+                <nav>
+                    <ul class="nav-popover-links">
+                        <li><a href="#about" popovertarget="mobile-nav" popovertargetaction="hide">About</a></li>
+                        <li><a href="#skills" popovertarget="mobile-nav" popovertargetaction="hide">Skills</a></li>
+                        <li><a href="#interactive" popovertarget="mobile-nav" popovertargetaction="hide">Interactive</a></li>
+                        <li><a href="#checklist" popovertarget="mobile-nav" popovertargetaction="hide">Checklist</a></li>
+                        <li><a href="#faq" popovertarget="mobile-nav" popovertargetaction="hide">FAQ</a></li>
+                        <li><a href="#conclusion" popovertarget="mobile-nav" popovertargetaction="hide">Conclusion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" aria-label="Hero banner">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Industrial Training Kit · Batch 2026</p>
+                <h1>Interactive Web Elements</h1>
+                <p class="hero-sub">Project 3 — Engineering the Client-Side Nervous System ⚡</p>
+                <div class="hero-badges">
+                    <span class="badge">DOM Manipulation</span>
+                    <span class="badge">Event Listeners</span>
+                    <span class="badge">State Management</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="section-tag">Welcome</p>
+                        <h2>Breathing Life into the Web</h2>
+                        <p>
+                            Project 3 is your <strong>engagement phase</strong>: Interactive Web Elements. This track isn't about
+                            "static layouts"—it's about <strong>User Experience</strong>. Master JavaScript to manipulate
+                            the DOM and create pages that respond to user actions in real-time.
+                        </p>
+                        <p>
+                            By completing this milestone, you prove you can bridge the gap between design and
+                            functionality through pure interactive logic. HTML is the bones, CSS is the skin,
+                            JavaScript is the <strong>nervous system</strong>.
+                        </p>
+                        <!-- Live visitor counter — dynamic content update -->
+                        <div class="stat-row">
+                            <div class="stat-box">
+                                <span class="stat-number js-visitor-count">0</span>
+                                <span class="stat-label">Page Visits</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number js-click-count">0</span>
+                                <span class="stat-label">Total Clicks</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number js-task-count">0</span>
+                                <span class="stat-label">Tasks Done</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80"
+                            alt="Multiple devices showing a responsive website layout"
+                            width="800" height="533"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills" id="skills">
+            <div class="section-container">
+                <p class="section-tag">Key Skills Used</p>
+                <h2>JavaScript Techniques</h2>
+                <!-- Click a card to flip it and reveal JS detail — interactive element -->
+                <p class="skills-hint">💡 Click any card to reveal the code pattern</p>
+                <ul class="skills-grid" role="list">
+                    <li class="skill-card js-flip-card" data-skill="dom">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="skill-icon" aria-hidden="true">🌐</span>
+                                <h3>DOM Manipulation</h3>
+                                <p>Select, modify, and create elements dynamically using the browser's living document tree.</p>
+                            </div>
+                            <div class="card-back">
+                                <code class="code-snippet">const el = document.querySelector('.js-target');
+el.textContent = 'Updated!';</code>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="skill-card js-flip-card" data-skill="events">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="skill-icon" aria-hidden="true">👂</span>
+                                <h3>Event Listeners</h3>
+                                <p>Wire the DOM's nerves — listen for clicks, keypresses, and user interactions using addEventListener.</p>
+                            </div>
+                            <div class="card-back">
+                                <code class="code-snippet">btn.addEventListener('click', () => {
+  doSomething();
+});</code>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="skill-card js-flip-card" data-skill="state">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="skill-icon" aria-hidden="true">🧠</span>
+                                <h3>State Management</h3>
+                                <p>Track UI state in JavaScript variables. When state changes, update the DOM to reflect it.</p>
+                            </div>
+                            <div class="card-back">
+                                <code class="code-snippet">let isDark = false;
+btn.onclick = () => {
+  isDark = !isDark;
+  render(isDark);
+};</code>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="skill-card js-flip-card" data-skill="classes">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="skill-icon" aria-hidden="true">🎨</span>
+                                <h3>Dynamic Classes</h3>
+                                <p>Use classList.toggle() to switch visual states. JS handles logic, CSS handles the animation.</p>
+                            </div>
+                            <div class="card-back">
+                                <code class="code-snippet">menu.classList.toggle('is-open');
+btn.classList.add('is-active');</code>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE DEMO SECTION -->
+        <section class="interactive" id="interactive">
+            <div class="section-container">
+                <p class="section-tag">Live Demos</p>
+                <h2>Try the IPO Loop</h2>
+                <p class="section-intro">Every interaction below follows the <strong>Input → Process → Output</strong> model from the PDF. Click the buttons to see JavaScript in action.</p>
+
+                <div class="demo-grid">
+
+                    <!-- Demo 1: Counter -->
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <span class="demo-tag">Demo 01</span>
+                            <h3>Counter Widget</h3>
+                        </div>
+                        <div class="demo-body">
+                            <div class="counter-display">
+                                <span class="counter-value js-counter-value" aria-live="polite">0</span>
+                            </div>
+                            <div class="counter-controls">
+                                <button class="btn btn-outline js-counter-decrement" aria-label="Decrement counter">−</button>
+                                <button class="btn btn-primary js-counter-reset">Reset</button>
+                                <button class="btn btn-outline js-counter-increment" aria-label="Increment counter">+</button>
+                            </div>
+                        </div>
+                        <div class="demo-ipo">
+                            <span class="ipo ipo-input">INPUT: Button click</span>
+                            <span class="ipo ipo-process">PROCESS: Update state</span>
+                            <span class="ipo ipo-output">OUTPUT: DOM updates</span>
+                        </div>
+                    </div>
+
+                    <!-- Demo 2: Color Mixer -->
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <span class="demo-tag">Demo 02</span>
+                            <h3>Theme Color Picker</h3>
+                        </div>
+                        <div class="demo-body">
+                            <div class="color-preview js-color-preview" aria-label="Color preview swatch"></div>
+                            <div class="color-swatches" role="group" aria-label="Pick a theme color">
+                                <button class="swatch js-swatch is-active" data-color="#5b4fcf" data-name="Violet" style="background:#5b4fcf;" aria-label="Violet"></button>
+                                <button class="swatch js-swatch" data-color="#e04040" data-name="Crimson" style="background:#e04040;" aria-label="Crimson"></button>
+                                <button class="swatch js-swatch" data-color="#0ea472" data-name="Emerald" style="background:#0ea472;" aria-label="Emerald"></button>
+                                <button class="swatch js-swatch" data-color="#e67e22" data-name="Amber" style="background:#e67e22;" aria-label="Amber"></button>
+                                <button class="swatch js-swatch" data-color="#2980b9" data-name="Ocean" style="background:#2980b9;" aria-label="Ocean"></button>
+                            </div>
+                            <p class="color-name js-color-name">Violet</p>
+                        </div>
+                        <div class="demo-ipo">
+                            <span class="ipo ipo-input">INPUT: Swatch click</span>
+                            <span class="ipo ipo-process">PROCESS: Read dataset</span>
+                            <span class="ipo ipo-output">OUTPUT: CSS variable</span>
+                        </div>
+                    </div>
+
+                    <!-- Demo 3: Character Counter -->
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <span class="demo-tag">Demo 03</span>
+                            <h3>Live Character Counter</h3>
+                        </div>
+                        <div class="demo-body">
+                            <textarea
+                                class="js-textarea"
+                                placeholder="Start typing to see character count update live..."
+                                maxlength="200"
+                                aria-describedby="char-count-display"
+                                rows="4"
+                            ></textarea>
+                            <div class="char-meta" id="char-count-display">
+                                <span class="char-count js-char-count" aria-live="polite">0</span>
+                                <span class="char-max">/ 200</span>
+                            </div>
+                        </div>
+                        <div class="demo-ipo">
+                            <span class="ipo ipo-input">INPUT: Keyboard event</span>
+                            <span class="ipo ipo-process">PROCESS: .length</span>
+                            <span class="ipo ipo-output">OUTPUT: textContent</span>
+                        </div>
+                    </div>
+
+                    <!-- Demo 4: Randomiser -->
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <span class="demo-tag">Demo 04</span>
+                            <h3>Quote Generator</h3>
+                        </div>
+                        <div class="demo-body quote-body">
+                            <blockquote class="quote-text js-quote-text" aria-live="polite">
+                                "The best way to learn to code is to write code every single day."
+                            </blockquote>
+                            <p class="quote-author js-quote-author">— DecodeLabs</p>
+                            <button class="btn btn-primary js-new-quote">New Quote ↺</button>
+                        </div>
+                        <div class="demo-ipo">
+                            <span class="ipo ipo-input">INPUT: Button click</span>
+                            <span class="ipo ipo-process">PROCESS: Math.random()</span>
+                            <span class="ipo ipo-output">OUTPUT: innerHTML</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKLIST SECTION — Dynamic content (createElement + appendChild) -->
+        <section class="checklist-section" id="checklist">
+            <div class="section-container">
+                <p class="section-tag">Implementation Checklist</p>
+                <h2>Project 3 Requirements</h2>
+                <p class="section-intro">Track your progress below. Check off each requirement as you implement it. Progress persists in the session via JavaScript state.</p>
+
+                <div class="checklist-wrapper">
+                    <div class="checklist-progress-bar-container" aria-label="Progress">
+                        <div class="checklist-progress-bar js-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="checklist-progress-text js-progress-text">0 of 6 complete</p>
+
+                    <ul class="checklist" id="js-checklist" role="list">
+                        <li class="checklist-item" data-id="1">
+                            <button class="check-btn js-check-btn" aria-label="Mark complete: DOM Selection" aria-pressed="false">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                            </button>
+                            <div class="checklist-content">
+                                <h3>DOM Selection & Manipulation</h3>
+                                <p>Use <code>querySelector</code> and <code>textContent</code> / <code>classList</code> to read and update elements.</p>
+                            </div>
+                        </li>
+                        <li class="checklist-item" data-id="2">
+                            <button class="check-btn js-check-btn" aria-label="Mark complete: Event Listeners" aria-pressed="false">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                            </button>
+                            <div class="checklist-content">
+                                <h3>Event Listeners</h3>
+                                <p>Wire at least 3 interactive elements using <code>addEventListener</code> — clicks, input, keyboard.</p>
+                            </div>
+                        </li>
+                        <li class="checklist-item" data-id="3">
+                            <button class="check-btn js-check-btn" aria-label="Mark complete: State Management" aria-pressed="false">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                            </button>
+                            <div class="checklist-content">
+                                <h3>State Management</h3>
+                                <p>Maintain UI state with JavaScript variables. Use <code>let</code> for mutable state, <code>const</code> for DOM refs.</p>
+                            </div>
+                        </li>
+                        <li class="checklist-item" data-id="4">
+                            <button class="check-btn js-check-btn" aria-label="Mark complete: Dynamic Content" aria-pressed="false">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                            </button>
+                            <div class="checklist-content">
+                                <h3>Dynamic Content Updates</h3>
+                                <p>Update page content without a reload using <code>textContent</code>. Avoid <code>innerHTML</code> to prevent XSS.</p>
+                            </div>
+                        </li>
+                        <li class="checklist-item" data-id="5">
+                            <button class="check-btn js-check-btn" aria-label="Mark complete: Dark Mode Toggle" aria-pressed="false">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                            </button>
+                            <div class="checklist-content">
+                                <h3>Dark Mode Toggle</h3>
+                                <p>Implement a theme toggle using <code>classList.toggle()</code> on <code>document.documentElement</code>.</p>
+                            </div>
+                        </li>
+                        <li class="checklist-item" data-id="6">
+                            <button class="check-btn js-check-btn" aria-label="Mark complete: Decoupled Code" aria-pressed="false">
+                                <span class="check-icon" aria-hidden="true">✓</span>
+                            </button>
+                            <div class="checklist-content">
+                                <h3>Engineering Standards: Decoupling</h3>
+                                <p>Use <code>js-</code> prefixed classes as JavaScript hooks. Never style with them. Use <code>is-</code> for visual state.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Add custom task — createElement demo -->
+                    <div class="add-task-row">
+                        <input
+                            type="text"
+                            class="task-input js-task-input"
+                            placeholder="Add your own requirement..."
+                            maxlength="80"
+                            aria-label="New task text"
+                        >
+                        <button class="btn btn-primary js-add-task" aria-label="Add task">Add Task</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION — toggle show/hide via JS -->
+        <section class="faq" id="faq">
+            <div class="section-container">
+                <p class="section-tag">Common Questions</p>
+                <h2>FAQ — Accordion</h2>
+                <p class="section-intro">An accordion is a classic JS pattern: click to toggle visibility. Uses <code>classList.toggle('is-open')</code>.</p>
+
+                <ul class="accordion" role="list">
+                    <li class="accordion-item js-accordion-item">
+                        <button class="accordion-trigger js-accordion-trigger" aria-expanded="false">
+                            <span>What is the DOM?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" hidden>
+                            <p>The Document Object Model (DOM) is the browser's volatile, living map of your HTML. It translates static markup into a tree of JavaScript objects (nodes), exposing a programmatic API for JavaScript to interact with the page. It is rebuilt entirely each time the page reloads.</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item js-accordion-item">
+                        <button class="accordion-trigger js-accordion-trigger" aria-expanded="false">
+                            <span>Why use const over let for DOM refs?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" hidden>
+                            <p><code>const</code> signals immutable binding — you will never reassign this variable. When grabbing a DOM element with <code>querySelector</code>, the reference itself doesn't change (only the element's properties do), so <code>const</code> is always the right choice. Reserve <code>let</code> strictly for values that must mutate — like counters or state flags.</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item js-accordion-item">
+                        <button class="accordion-trigger js-accordion-trigger" aria-expanded="false">
+                            <span>Why avoid innerHTML?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" hidden>
+                            <p>Using <code>innerHTML</code> to insert user-supplied data is a direct path to Cross-Site Scripting (XSS) vulnerabilities — an attacker can inject malicious <code>&lt;script&gt;</code> tags. Always use <code>textContent</code> for safe data injection, or <code>document.createElement()</code> with <code>appendChild()</code> to build complex, data-driven interfaces programmatically.</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item js-accordion-item">
+                        <button class="accordion-trigger js-accordion-trigger" aria-expanded="false">
+                            <span>What is the js- / is- naming convention?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" hidden>
+                            <p>Professional code relies on a predictable contract between markup and logic. The <code>js-</code> prefix is used strictly as JavaScript hooks — never for CSS styling. The <code>is-</code> prefix defines visual state (e.g., <code>.is-active</code>, <code>.is-hidden</code>). This decoupling means a designer can restyle everything without breaking JS, and a developer can refactor JS without touching CSS.</p>
+                        </div>
+                    </li>
+                    <li class="accordion-item js-accordion-item">
+                        <button class="accordion-trigger js-accordion-trigger" aria-expanded="false">
+                            <span>Imperative vs Declarative — which is better?</span>
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" hidden>
+                            <p>Neither is universally "better" — they are tools for different scales. Imperative (Vanilla JS) means writing explicit step-by-step instructions to find and update DOM nodes. Declarative (React, Vue) means defining what the UI should look like based on state, and letting the framework update the DOM automatically. Mastering imperative Vanilla JS first gives you the foundation to understand why frameworks exist.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section class="conclusion" id="conclusion">
+            <div class="section-container">
+                <p class="section-tag">Final Thoughts</p>
+                <h2>Conclusion</h2>
+                <p>
+                    The best way to master Frontend Development is through hands-on practice, not just theory.
+                    Don't just aim to complete these projects — experiment with unique solutions like adding a
+                    "Dark Mode" toggle or a dynamic image gallery, and treat every <code style="background:rgba(255,255,255,0.2); color:#fff;">"Uncaught ReferenceError"</code> as a learning opportunity.
+                </p>
+                <p>
+                    As you build these milestones at DecodeLabs, you are creating a real-world portfolio that
+                    showcases your scripting proficiency to future employers. Your journey to becoming a
+                    professional developer begins right here, right now, with the very first event listener
+                    you attach today.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-mark">DL</span>
+                <p class="footer-tagline">Industrial Training Kit · 2026</p>
+            </div>
+            <address class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📞 <a href="tel:+918933006408">+91 89330 06408</a></p>
+                <p>✉ <a href="mailto:decodelabs.tech@gmail.com">decodelabs.tech@gmail.com</a></p>
+                <p>🌎 <a href="https://www.decodelabs.tech" target="_blank" rel="noopener">www.decodelabs.tech</a></p>
+                <p>📍 Greater Lucknow, India</p>
+            </address>
+        </div>
+        <p class="footer-copy">© 2026 DecodeLabs. All rights reserved.</p>
+    </footer>
+
+    <!-- ============================================================
+         JAVASCRIPT — Project 3: Interactive Web Elements
+         IPO Loop: Input (Event) → Process (Logic) → Output (DOM Mutation)
+         Engineering Standards: js- hooks, is- state classes, const/let only
+         ============================================================ -->
+    <script>
+    'use strict';
+
+    /* ============================================================
+       UTILITY: GLOBAL CLICK COUNTER (tracks all page clicks for stat box)
+       ============================================================ */
+    let globalClickCount = 0;
+    const elClickCount = document.querySelector('.js-click-count');
+
+    document.addEventListener('click', () => {
+        globalClickCount++;
+        elClickCount.textContent = globalClickCount;
+    });
+
+    /* ============================================================
+       VISITOR COUNT ANIMATION (dynamic content update on load)
+       ============================================================ */
+    const elVisitorCount = document.querySelector('.js-visitor-count');
+    let visitCount = parseInt(sessionStorage.getItem('dl-visits') || '0') + 1;
+    sessionStorage.setItem('dl-visits', visitCount);
+
+    // Animated count-up
+    let v = 0;
+    const visitTimer = setInterval(() => {
+        v = Math.min(v + Math.ceil(visitCount / 30), visitCount);
+        elVisitorCount.textContent = v;
+        if (v >= visitCount) clearInterval(visitTimer);
+    }, 40);
+
+    /* ============================================================
+       DARK MODE TOGGLE
+       State: isDark (boolean)
+       Input: click on .js-theme-toggle
+       Process: toggle data-theme attribute on <html>
+       Output: CSS custom properties switch via [data-theme="dark"]
+       ============================================================ */
+    const themeToggle = document.querySelector('.js-theme-toggle');
+    const themeIcon   = themeToggle.querySelector('.theme-icon');
+    let isDark = false;
+
+    function applyTheme(dark) {
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        themeIcon.textContent = dark ? '☀️' : '🌙';
+        themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        isDark = !isDark;
+        applyTheme(isDark);
+    });
+
+    /* ============================================================
+       FLIP CARDS — classList.toggle for 3D flip effect
+       ============================================================ */
+    const flipCards = document.querySelectorAll('.js-flip-card');
+    flipCards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('is-flipped');
+            const isFlipped = card.classList.contains('is-flipped');
+            card.setAttribute('aria-pressed', isFlipped);
+        });
+    });
+
+    /* ============================================================
+       COUNTER WIDGET
+       State: counterValue (number)
+       Input: click on increment / decrement / reset buttons
+       Process: mutate counterValue, clamp between -99 and 99
+       Output: update .js-counter-value textContent + color class
+       ============================================================ */
+    let counterValue = 0;
+    const elCounterValue     = document.querySelector('.js-counter-value');
+    const btnIncrement        = document.querySelector('.js-counter-increment');
+    const btnDecrement        = document.querySelector('.js-counter-decrement');
+    const btnReset            = document.querySelector('.js-counter-reset');
+
+    function renderCounter() {
+        elCounterValue.textContent = counterValue;
+        elCounterValue.classList.toggle('is-positive', counterValue > 0);
+        elCounterValue.classList.toggle('is-negative', counterValue < 0);
+        elCounterValue.classList.toggle('is-zero',     counterValue === 0);
+    }
+
+    btnIncrement.addEventListener('click', () => {
+        if (counterValue < 99) counterValue++;
+        renderCounter();
+    });
+
+    btnDecrement.addEventListener('click', () => {
+        if (counterValue > -99) counterValue--;
+        renderCounter();
+    });
+
+    btnReset.addEventListener('click', () => {
+        counterValue = 0;
+        renderCounter();
+    });
+
+    renderCounter(); // initial render
+
+    /* ============================================================
+       COLOR PICKER / THEME SWATCHES
+       State: activeColor (string), activeName (string)
+       Input: click on .js-swatch
+       Process: read data-color and data-name from clicked element
+       Output: update CSS variable + color preview + label
+       ============================================================ */
+    const swatches       = document.querySelectorAll('.js-swatch');
+    const colorPreview   = document.querySelector('.js-color-preview');
+    const colorNameEl    = document.querySelector('.js-color-name');
+    let activeColor      = '#5b4fcf';
+
+    function applyColor(color, name) {
+        activeColor = color;
+        colorPreview.style.background = color;
+        colorPreview.style.boxShadow  = `0 8px 32px ${color}60`;
+        colorNameEl.textContent = name;
+        document.documentElement.style.setProperty('--clr-accent', color);
+    }
+
+    swatches.forEach(swatch => {
+        swatch.addEventListener('click', () => {
+            swatches.forEach(s => s.classList.remove('is-active'));
+            swatch.classList.add('is-active');
+            applyColor(swatch.dataset.color, swatch.dataset.name);
+        });
+    });
+
+    // Initial render
+    applyColor('#5b4fcf', 'Violet');
+
+    /* ============================================================
+       CHARACTER COUNTER
+       Input: 'input' event on textarea
+       Process: read .value.length
+       Output: update .js-char-count, toggle warning class
+       ============================================================ */
+    const textarea      = document.querySelector('.js-textarea');
+    const charCountEl   = document.querySelector('.js-char-count');
+    const maxChars      = 200;
+
+    textarea.addEventListener('input', () => {
+        const len = textarea.value.length;
+        charCountEl.textContent = len;
+        charCountEl.classList.toggle('is-warning', len >= maxChars * 0.8);
+        charCountEl.classList.toggle('is-danger',  len >= maxChars * 0.95);
+    });
+
+    /* ============================================================
+       QUOTE GENERATOR
+       Input: click on .js-new-quote
+       Process: Math.random() to pick from quotes array
+       Output: update textContent (NOT innerHTML — XSS safety)
+       ============================================================ */
+    const quotes = [
+        { text: "The best way to learn to code is to write code every single day.", author: "DecodeLabs" },
+        { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+        { text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", author: "Martin Fowler" },
+        { text: "Code is like humour. When you have to explain it, it's bad.", author: "Cory House" },
+        { text: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "Harold Abelson" },
+        { text: "The most disastrous thing that you can ever learn is your first programming language.", author: "Alan Kay" },
+        { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+    ];
+
+    const quoteTextEl   = document.querySelector('.js-quote-text');
+    const quoteAuthorEl = document.querySelector('.js-quote-author');
+    const btnNewQuote   = document.querySelector('.js-new-quote');
+    let lastQuoteIndex  = 0;
+
+    function showNewQuote() {
+        let idx;
+        do { idx = Math.floor(Math.random() * quotes.length); } while (idx === lastQuoteIndex);
+        lastQuoteIndex = idx;
+        const q = quotes[idx];
+        // textContent for safe injection (per PDF engineering standard)
+        quoteTextEl.textContent  = `"${q.text}"`;
+        quoteAuthorEl.textContent = `— ${q.author}`;
+        quoteTextEl.classList.add('is-animating');
+        setTimeout(() => quoteTextEl.classList.remove('is-animating'), 400);
+    }
+
+    btnNewQuote.addEventListener('click', showNewQuote);
+
+    /* ============================================================
+       CHECKLIST — state tracking + progress bar + createElement demo
+       State: tasks (array of objects with id, text, done)
+       Input: click check buttons / add-task button
+       Process: toggle done state / create new element
+       Output: classList mutations + progress bar update
+       ============================================================ */
+    const elTaskCount    = document.querySelector('.js-task-count');
+    const progressBar    = document.querySelector('.js-progress-bar');
+    const progressText   = document.querySelector('.js-progress-text');
+    const taskInput      = document.querySelector('.js-task-input');
+    const btnAddTask     = document.querySelector('.js-add-task');
+    const checklistEl    = document.getElementById('js-checklist');
+
+    function updateProgress() {
+        const all  = checklistEl.querySelectorAll('.checklist-item');
+        const done = checklistEl.querySelectorAll('.checklist-item.is-done');
+        const pct  = all.length ? Math.round((done.length / all.length) * 100) : 0;
+        progressBar.style.width = `${pct}%`;
+        progressBar.setAttribute('aria-valuenow', pct);
+        progressText.textContent = `${done.length} of ${all.length} complete`;
+        elTaskCount.textContent = done.length;
+    }
+
+    // Wire existing checklist items
+    function wireCheckBtn(btn) {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.checklist-item');
+            item.classList.toggle('is-done');
+            const isChecked = item.classList.contains('is-done');
+            btn.setAttribute('aria-pressed', isChecked);
+            btn.setAttribute('aria-label', isChecked
+                ? `Mark incomplete: ${item.querySelector('h3').textContent}`
+                : `Mark complete: ${item.querySelector('h3').textContent}`
+            );
+            updateProgress();
+        });
+    }
+
+    document.querySelectorAll('.js-check-btn').forEach(wireCheckBtn);
+    updateProgress(); // initial render
+
+    // ADD TASK — document.createElement() demo
+    let taskIdCounter = 100;
+
+    function createTaskElement(text) {
+        const li  = document.createElement('li');
+        li.className = 'checklist-item';
+        li.dataset.id = taskIdCounter++;
+
+        const btn = document.createElement('button');
+        btn.className = 'check-btn js-check-btn';
+        btn.setAttribute('aria-label', `Mark complete: ${text}`);
+        btn.setAttribute('aria-pressed', 'false');
+        const icon = document.createElement('span');
+        icon.className = 'check-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = '✓';
+        btn.appendChild(icon);
+
+        const content = document.createElement('div');
+        content.className = 'checklist-content';
+
+        const h3 = document.createElement('h3');
+        h3.textContent = text; // textContent — safe from XSS
+
+        const p = document.createElement('p');
+        p.textContent = 'Custom requirement added by you.';
+
+        content.appendChild(h3);
+        content.appendChild(p);
+        li.appendChild(btn);
+        li.appendChild(content);
+
+        // Add a delete button for custom tasks
+        const delBtn = document.createElement('button');
+        delBtn.className = 'delete-btn';
+        delBtn.setAttribute('aria-label', `Delete task: ${text}`);
+        delBtn.textContent = '✕';
+        delBtn.addEventListener('click', () => {
+            li.remove();
+            updateProgress();
+        });
+        li.appendChild(delBtn);
+
+        wireCheckBtn(btn);
+        return li;
+    }
+
+    function addTask() {
+        const text = taskInput.value.trim();
+        if (!text) {
+            taskInput.classList.add('is-error');
+            taskInput.focus();
+            setTimeout(() => taskInput.classList.remove('is-error'), 600);
+            return;
+        }
+        const newItem = createTaskElement(text);
+        checklistEl.appendChild(newItem);
+        taskInput.value = '';
+        updateProgress();
+        newItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    btnAddTask.addEventListener('click', addTask);
+    taskInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') addTask();
+    });
+
+    /* ============================================================
+       ACCORDION FAQ
+       Input: click on .js-accordion-trigger
+       Process: toggle is-open class, update aria-expanded, toggle hidden
+       Output: panel shows/hides with CSS transition
+       ============================================================ */
+    const accordionItems = document.querySelectorAll('.js-accordion-item');
+
+    accordionItems.forEach(item => {
+        const trigger = item.querySelector('.js-accordion-trigger');
+        const panel   = item.querySelector('.accordion-panel');
+        const icon    = trigger.querySelector('.accordion-icon');
+
+        trigger.addEventListener('click', () => {
+            const isOpen = item.classList.contains('is-open');
+
+            // Close all others (single-open accordion)
+            accordionItems.forEach(other => {
+                other.classList.remove('is-open');
+                other.querySelector('.js-accordion-trigger').setAttribute('aria-expanded', 'false');
+                other.querySelector('.accordion-panel').hidden = true;
+                other.querySelector('.accordion-icon').textContent = '+';
+            });
+
+            // Toggle clicked item
+            if (!isOpen) {
+                item.classList.add('is-open');
+                trigger.setAttribute('aria-expanded', 'true');
+                panel.hidden = false;
+                icon.textContent = '−';
+            }
+        });
+    });
+
+    /* ============================================================
+       SCROLL REVEAL — IntersectionObserver for entrance animations
+       ============================================================ */
+    const revealEls = document.querySelectorAll('.demo-card, .checklist-item, .accordion-item, .skill-card');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    </script>
+</body>
+</html>
